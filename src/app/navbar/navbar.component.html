@@ -1,0 +1,75 @@
+<header class="body-font text-gray-400 dark:bg-gray-900">
+  <div
+    class="container mx-auto flex flex-col flex-wrap items-center p-5 md:flex-row">
+    <a class="title-font mb-4 flex items-center font-medium text-white md:mb-0">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        class="h-10 w-10 rounded-full bg-indigo-500 p-2 text-white"
+        viewBox="0 0 24 24">
+        <path
+          d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+      </svg>
+      <span class="app-text ml-3 text-xl">Angular 17 project</span>
+    </a>
+    <nav
+      class="flex flex-wrap items-center justify-center text-base md:ml-4 md:mr-auto md:border-l md:border-gray-700 md:py-1 md:pl-4">
+      <a
+        routerLink="/home"
+        routerLinkActive="active"
+        class="mr-5 hover:text-white"
+        >Home</a
+      >
+      <a
+        routerLink="/about"
+        routerLinkActive="active"
+        class="mr-5 hover:text-white"
+        >About</a
+      >
+      <a
+        routerLink="/contact"
+        routerLinkActive="active"
+        class="mr-5 hover:text-white"
+        ariaCurrentWhenActive="page"
+        >Contact</a
+      >
+    </nav>
+    @if (darkModeService.darkModeSignal()) {
+      <svg
+        (click)="toggleDarkMode()"
+        class="h-8 w-8 text-blue-400 hover:text-white"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" />
+        <circle cx="12" cy="12" r="4" />
+        <path
+          d="M3 12h1M12 3v1M20 12h1M12 20v1M5.6 5.6l.7 .7M18.4 5.6l-.7 .7M17.7 17.7l.7 .7M6.3 17.7l-.7 .7" />
+      </svg>
+    } @else {
+      <svg
+        (click)="toggleDarkMode()"
+        class="h-8 w-8 text-blue-400 hover:text-black"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" />
+        <path d="M16.2 4a9.03 9.03 0 1 0 3.9 12a6.5 6.5 0 1 1 -3.9 -12" />
+      </svg>
+    }
+  </div>
+</header>
